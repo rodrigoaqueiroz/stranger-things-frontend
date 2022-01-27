@@ -108,6 +108,7 @@ class StrangerThings extends React.Component {
   }
 
   checkDeploy(development) {
+    // Referência: https://github.com/mars/create-react-app-buildpack#user-content-set-vars-for-local-dev
     if (development === 'true') return (<p>Em desenvolvimento</p>);
   }
 
@@ -115,7 +116,7 @@ class StrangerThings extends React.Component {
     const {
       hereIsTheUpsideDownWorld, characterName, characters, page,
     } = this.state;
-    const local = process.env.DEVELOPMENT;
+    const local = process.env.REACT_APP_DEVELOPMENT;
     return (
       <div
         className={ `reality ${getRealityClass(
