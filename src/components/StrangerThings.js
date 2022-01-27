@@ -40,8 +40,6 @@ class StrangerThings extends React.Component {
 
     this.nextPage = this.nextPage.bind(this);
     this.previousPage = this.previousPage.bind(this);
-
-    this.checkDeploy = this.checkDeploy.bind(this);
   }
 
   handleInput(event) {
@@ -107,16 +105,12 @@ class StrangerThings extends React.Component {
     );
   }
 
-  checkDeploy(development) {
-    // Referência: https://github.com/mars/create-react-app-buildpack#user-content-set-vars-for-local-dev
-    if (development === 'true') return (<p>Em desenvolvimento</p>);
-  }
-
   render() {
     const {
       hereIsTheUpsideDownWorld, characterName, characters, page,
     } = this.state;
-    const local = process.env.REACT_APP_DEVELOPMENT;
+    // const development = process.env.REACT_APP_DEVELOPMENT;
+    const development = 'true';
     return (
       <div
         className={ `reality ${getRealityClass(
@@ -141,7 +135,9 @@ class StrangerThings extends React.Component {
           </div>
 
           <div>
-            { this.checkDeploy(local) }
+            {/* Referência do nome das variáveis de ambiente: https://github.co/mars/create-react-app-buildpack#user-content-set-vars-for-local-dev */}
+            {/* Referência de uma forma mais limpa de se renderizar pela booleano: https://pt-br.reactjs.org/docs/conditional-rendering.html */}
+            { development === 'true' && <p>Em desenvolvimento</p> }
             <Table characters={ characters } />
           </div>
 
