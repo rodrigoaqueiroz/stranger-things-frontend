@@ -40,6 +40,8 @@ class StrangerThings extends React.Component {
 
     this.nextPage = this.nextPage.bind(this);
     this.previousPage = this.previousPage.bind(this);
+
+    this.checkDeploy = this.checkDeploy.bind(this);
   }
 
   handleInput(event) {
@@ -105,6 +107,10 @@ class StrangerThings extends React.Component {
     );
   }
 
+  checkDeploy() {
+    if (!process.env.PRODUCTION) return <p> Em desenvolvimento </p>;
+  }
+
   render() {
     const {
       hereIsTheUpsideDownWorld, characterName, characters, page,
@@ -133,6 +139,7 @@ class StrangerThings extends React.Component {
           </div>
 
           <div>
+            { this.checkDeploy() }
             <Table characters={ characters } />
           </div>
 
