@@ -11,7 +11,7 @@ const getRealityClass = (hereIsTheUpsideDownWorld) => (
 const hawkinsURL = process.env.REACT_APP_HAWKINS_URL;
 const hawkinsTimeout = process.env.REACT_APP_HAWKINS_TIMEOUT;
 const upsidedownURL = process.env.REACT_APP_UPSIDEDOWN_URL;
-const upsidedownTimeout = REACT_APP_UPSIDEDOWN_TIMEOUT;
+const upsidedownTimeout = process.env.REACT_APP_UPSIDEDOWN_TIMEOUT;
 
 const strangerThingsConfig = {
   url: hawkinsURL,
