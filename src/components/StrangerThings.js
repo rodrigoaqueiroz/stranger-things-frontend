@@ -108,7 +108,8 @@ class StrangerThings extends React.Component {
   }
 
   checkDeploy() {
-    if (!process.env.PRODUCTION) return <p> Em desenvolvimento </p>;
+    const development = process.env.DEVELOPMENT;
+    if (development === true) return <p>Em desenvolvimento</p>;
   }
 
   render() {
