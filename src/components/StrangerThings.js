@@ -8,19 +8,14 @@ const getRealityClass = (hereIsTheUpsideDownWorld) => (
   hereIsTheUpsideDownWorld ? 'upside-down' : 'stranger-things'
 );
 
-const hawkinsURL = process.env.REACT_APP_HAWKINS_URL;
-const hawkinsTimeout = process.env.REACT_APP_HAWKINS_TIMEOUT;
-const upsidedownURL = process.env.REACT_APP_UPSIDEDOWN_URL;
-const upsidedownTimeout = process.env.REACT_APP_UPSIDEDOWN_TIMEOUT;
-
 const strangerThingsConfig = {
-  url: hawkinsURL,
-  timeout: hawkinsTimeout,
+  url: process.env.REACT_APP_HAWKINS_URL,
+  timeout: process.env.REACT_APP_HAWKINS_TIMEOUT,
 };
 
 const upsideDownConfig = {
-  url: upsidedownURL,
-  timeout: upsidedownTimeout,
+  url: process.env.REACT_APP_UPSIDEDOWN_URL,
+  timeout: process.env.REACT_APP_UPSIDEDOWN_TIMEOUT,
 };
 
 const charactersService = new CharactersService(strangerThingsConfig);
