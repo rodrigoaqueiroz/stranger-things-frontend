@@ -107,15 +107,15 @@ class StrangerThings extends React.Component {
     );
   }
 
-  checkDeploy() {
-    const development = process.env.DEVELOPMENT;
-    if (development === true) return <p>Em desenvolvimento</p>;
+  checkDeploy(development) {
+    if (development === 'true') return (<p>Em desenvolvimento</p>);
   }
 
   render() {
     const {
       hereIsTheUpsideDownWorld, characterName, characters, page,
     } = this.state;
+    const local = process.env.DEVELOPMENT;
     return (
       <div
         className={ `reality ${getRealityClass(
@@ -140,7 +140,7 @@ class StrangerThings extends React.Component {
           </div>
 
           <div>
-            { this.checkDeploy() }
+            { this.checkDeploy(local) }
             <Table characters={ characters } />
           </div>
 
